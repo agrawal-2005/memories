@@ -18,11 +18,11 @@ const PostDetails = () => {
     dispatch(getPosts());
     dispatch(getPost(id));
   }, [id, dispatch]);
-
+  
   const openPost = (_id) => {
     navigate(`/posts/${_id}`);
   };
-
+  
   if (isLoading) {
     return (
       <Paper elevation={6} className={classes.loadingPaper}>

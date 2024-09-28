@@ -115,6 +115,7 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application for shar
 ## Screenshots
 
 ![Memories App Screenshot](./memories.png)
+![Memories App Screenshot](./PageDetails.png)
 
 ## Troubleshooting
 
