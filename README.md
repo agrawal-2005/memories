@@ -1,4 +1,4 @@
-```md
+```markdown
 # Memories Application
 
 A simple full-stack MERN (MongoDB, Express, React, Node.js) application for sharing memorable moments with images and descriptions. The app supports user authentication, Google sign-in, and allows users to create, edit, and delete posts.
@@ -9,6 +9,8 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application for shar
 - Create, Edit, and Delete Posts
 - Google OAuth Integration for Signing In
 - Responsive Design with Material UI
+- View Post Details with Recommendations
+- Enhanced UI with Material-UI Components
 
 ## Tech Stack
 
@@ -124,7 +126,6 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application for shar
 
 Feel free to fork this repository and submit pull requests for new features, bug fixes, or enhancements. Contributions are welcome!
 
-
 ### Key Sections
 - **Features**: Highlights the main functionality of the app.
 - **Tech Stack**: Lists the technologies used.
@@ -132,3 +133,9 @@ Feel free to fork this repository and submit pull requests for new features, bug
 - **Authentication**: Information about JWT and Google OAuth authentication.
 - **Troubleshooting**: Addresses common issues.
 - **Contributions**: Encourages contributions to the project.
+```
+
+### Changes Made:
+1. **Added Features**: Included the ability to view post details and recommendations.
+2. **Clarified Project Structure**: No changes were made here, but you might want to ensure that it accurately reflects your current directory structure.
+3. **Minor Text Edits**: Adjusted wording for clarity and consistency.
