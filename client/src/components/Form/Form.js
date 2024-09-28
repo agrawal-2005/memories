@@ -3,7 +3,8 @@ import useStyle from "./styles";
 import { TextField, Button, Typography, Paper, Grid } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { useDispatch, useSelector } from "react-redux";
-import { createPost, updatedPost } from "../../actions/posts";
+import { createPost, getPosts, updatedPost } from "../../actions/posts";
+import { useNavigate } from "react-router-dom";
 
 function Form({ currentId, setCurrentId }) {
   const [postData, setPostData] = useState({
@@ -15,9 +16,10 @@ function Form({ currentId, setCurrentId }) {
   const classes = useStyle();
   const dispatch = useDispatch();
   const post = useSelector((state) =>
-    currentId ? state.posts.find((p) => p._id === currentId) : null
+    currentId ? state.posts.posts.find((p) => p._id === currentId) : null
   );
   const user = JSON.parse(localStorage.getItem('profile'));
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (post) setPostData(post);
@@ -28,8 +30,9 @@ function Form({ currentId, setCurrentId }) {
 
     if (currentId) {
       dispatch(updatedPost(currentId, { ...postData, name: user?.result?.name }));
+      dispatch(getPosts());
     } else {
-      dispatch(createPost({ ...postData, name: user?.result?.name }));
+      dispatch(createPost({ ...postData, name: user?.result?.name }), navigate);
     }
     clear();
   };
@@ -129,7 +132,7 @@ function Form({ currentId, setCurrentId }) {
               size="large"
               type="submit"
               fullWidth
-              style={{ marginTop: "8px", marginBottom: "8px" }} // Reducing margin
+              style={{ marginTop: "5px", marginBottom: "4px" }} // Reducing margin
             >
               Submit
             </Button>
@@ -141,7 +144,6 @@ function Form({ currentId, setCurrentId }) {
               size="small"
               onClick={clear}
               fullWidth
-              style={{ marginTop: "8px", marginBottom: "8px" }} // Reducing margin
             >
               Clear
             </Button>

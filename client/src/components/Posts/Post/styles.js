@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles({
   media: {
     height: 0,
-    paddingTop: '56.25%',
+    paddingTop: '56.25%', // 16:9 aspect ratio
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
@@ -15,10 +15,8 @@ export default makeStyles({
     height: '400px', // Set a fixed height for the initial view
     position: 'relative',
     overflow: 'hidden',
-    transition: 'height 0.3s ease', // Add smooth transition for height change
-  },
-  expandedCard: {
-    height: 'auto', // Let the card expand to fit content
+    transition: 'height 0.3s ease',
+    paddingBottom: '4px'
   },
   overlay: {
     position: 'absolute',
@@ -39,14 +37,22 @@ export default makeStyles({
   },
   title: {
     padding: '0 16px',
+    marginBottom: '8px', // Add margin for spacing
+    textAlign: 'left', // Align title text to the left
   },
   content: {
-    flexGrow: 1, // Allow content area to grow and fill available space
-    overflowY: 'auto', // Enable vertical scrolling if content is too long
+    flexGrow: 1,
+    padding: '0 16px', // Add padding for content
+    overflowY: 'auto',
+    textAlign: 'left', // Align content text to the left
   },
   cardActions: {
-    padding: '0 16px 8px 16px',
+    padding: '8px 16px', // Add padding to CardActions
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  button: {
+    marginLeft: '8px', // Fixed margin between buttons
+    marginBottom: '8px', // Add margin to ensure buttons don't touch the bottom
   },
 });

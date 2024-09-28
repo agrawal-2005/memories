@@ -1,17 +1,23 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  container: {
-    padding: theme.spacing(3),
-  },
-  gridContainer: {
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
+  [theme.breakpoints.down('sm')]: {
+    mainContainer: {
+      flexDirection: 'column-reverse',
     },
   },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.spacing(2),
+  appBar: {
+    borderRadius: 15,
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    color: 'rgba(0,183,255, 1)',
+  },
+  image: {
+    marginLeft: '15px',
   },
 }));
