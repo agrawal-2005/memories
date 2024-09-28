@@ -17,10 +17,24 @@ const Post = ({ post, setCurrentId }) => {
   const [showFullMessage, setShowFullMessage] = useState(false);
   const navigate = useNavigate();
   const maxLength = 60;
+  const [likes, setLikes] = useState(post?.likes);
+
+  const userId = user?.result?.googleId || user?.result?._id;
+  const hasLikedPost = post.likes.find((like) => like === userId)
+
+  const handleLike = async() => {
+    dispatch(likePost(post._id))
+    if(hasLikedPost){
+      setLikes(post.likes.filter((id) => id !== userId))
+    }
+    else{
+      setLikes([...post.likes, userId])
+    }
+  }
 
   const Likes = () => {
-    const isLiked = post.likes.includes(user?.result?.googleId || user?.result?._id);
-    const likeCount = post.likes.length;
+    const isLiked = likes.includes(user?.result?.googleId || user?.result?._id);
+    const likeCount = likes.length;
 
     return (
       <>
@@ -94,7 +108,7 @@ const Post = ({ post, setCurrentId }) => {
           size="small"
           color="primary"
           disabled={!user?.result}
-          onClick={() => dispatch(likePost(post._id))}
+          onClick={handleLike}
         >
           <Likes />
         </Button>
@@ -102,7 +116,7 @@ const Post = ({ post, setCurrentId }) => {
           <Button
             className={classes.button} // Apply the button class
             size="small"
-            color="primary"
+            color="secondary"
             onClick={() => dispatch(deletedPost(post._id))}
           >
             <DeleteIcon fontSize="small" /> Delete

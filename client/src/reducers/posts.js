@@ -1,4 +1,4 @@
-import { FETCH_ALL, UPDATE, DELETE, CREATE, FETCH_BY_SEARCH, START_LOADING, END_LOADING, FETCH_POST } from "../constants/actionTypes";
+import { FETCH_ALL, COMMENT, UPDATE, DELETE, CREATE, FETCH_BY_SEARCH, START_LOADING, END_LOADING, FETCH_POST } from "../constants/actionTypes";
 
 const postsReducer = (state = {isLoading: true, posts: []}, action) => {
   switch (action.type) {
@@ -23,6 +23,18 @@ const postsReducer = (state = {isLoading: true, posts: []}, action) => {
       };
     case CREATE:
       return {...state, posts: [...state.posts, action.payload]};
+    case COMMENT:
+      return {
+        ...state,
+        posts: state.posts.map((post) => {
+          //change the post that just received a comment...
+          if(post._id === action.payload._id){
+            return action.payload;
+          }
+          //return all the other posts normally...
+          return post;
+        })
+      }
     case UPDATE:
       // console.log('Update action payload:', action.payload); // Add this log
       return {...state, posts: state.posts.map((post) =>

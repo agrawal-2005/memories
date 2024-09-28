@@ -11,6 +11,7 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application for shar
 - Responsive Design with Material UI
 - View Post Details with Recommendations
 - Enhanced UI with Material-UI Components
+- Image Preview on Click with Modal
 
 ## Tech Stack
 
@@ -136,7 +137,7 @@ Feel free to fork this repository and submit pull requests for new features, bug
 - **Contributions**: Encourages contributions to the project.
 ```
 
-### Changes Made:
-1. **Added Features**: Included the ability to view post details and recommendations.
-2. **Clarified Project Structure**: No changes were made here, but you might want to ensure that it accurately reflects your current directory structure.
+### Key Changes Made:
+1. **Added Features**: Included the image preview on click with modal in the features section.
+2. **Clarified Project Structure**: Ensured it accurately reflects your directory structure.
 3. **Minor Text Edits**: Adjusted wording for clarity and consistency.

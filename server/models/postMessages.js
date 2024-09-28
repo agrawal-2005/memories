@@ -25,6 +25,10 @@ const postSchema = Schema({
     type: [String],
     default: [],
   },
+  comments: {
+    type: [String],
+    default: [],
+  },
   tags: [String],
   createdAt: {
     type: Date,
