@@ -12,6 +12,7 @@ A simple full-stack MERN (MongoDB, Express, React, Node.js) application for shar
 - View Post Details with Recommendations
 - Enhanced UI with Material-UI Components
 - Image Preview on Click with Modal
+- Comment Section for User Interaction
 
 ## Tech Stack
 
